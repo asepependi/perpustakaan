@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    session_start();
     include "config/koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -26,6 +27,8 @@
         <link href="../assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <!-- Responsive datatable examples -->
         <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Sweet Alert -->
+        <link href="../assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     </head>
 
 
@@ -189,5 +192,8 @@
         <!-- Required datatable js -->
         <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Sweet-Alert  -->
+        <script src="../assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+        <script src="../assets/pages/sweet-alert.init.js"></script>
     </body>
 </html>

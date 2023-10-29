@@ -11,13 +11,21 @@
         <h5 class="page-title">Perpustakaan</h5>
     </div>
 </div>
-<?php ?>
-<!-- <div class="">
-    <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-    </div>
-</div> -->
-<?php ?>
+<?php
+    if (isset($_SESSION['message'])) {
+        ?>
+            <div class="">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo $_SESSION['message']; ?></strong>
+                </div>
+            </div>
+        <?php 
+        unset($_SESSION['message']);
+    }
+?>
 <!-- end row -->
 <div class="row">
     <div class="col-12">

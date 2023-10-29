@@ -11,6 +11,21 @@
         <h5 class="page-title">Pepustakaan</h5>
     </div>
 </div>
+<?php
+    if (isset($_SESSION['message'])) {
+        ?>
+            <div class="">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo $_SESSION['message']; ?></strong>
+                </div>
+            </div>
+        <?php 
+        unset($_SESSION['message']);
+    }
+?>
 <div class="row">
     <div class="col-12">
         <div class="card m-b-30">
@@ -47,7 +62,7 @@
                                         <td class="text-center">'.$data['stok'].'</td>
                                         <td class="text-center">
                                             <a href="?module=edit_data_buku&kd_buku='.$data['kd_buku'].'" class="btn btn-primary btn-xs">Edit</a>
-                                            <a href="buku_hapus.php?buku='.$data['kd_buku'].'" onclick="return confirm("Apa anda yakin akan menghapus '.$data['judul_buku'].'?")" class="btn btn-danger btn-xs">Hapus</a>
+                                            <a href="?module=hapus_data_buku&kd_buku='.$data['kd_buku'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>
                                 ';
@@ -61,3 +76,8 @@
     </div>
 </div>
 <?php ?>
+<script type="text/javascript">
+    function deleteData() {
+        return confirm('Apakah anda yakin ingin menghapus Buku ini ?')
+    }
+</script>

@@ -12,6 +12,21 @@
     </div>
 </div>
 <!-- end row -->
+<?php
+    if (isset($_SESSION['message'])) {
+        ?>
+            <div class="">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo $_SESSION['message']; ?></strong>
+                </div>
+            </div>
+        <?php 
+        unset($_SESSION['message']);
+    }
+?>
 <div class="row">
     <div class="col-12">
         <div class="card m-b-30">
@@ -27,7 +42,7 @@
                     <div class="form-group row">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Kode Buku</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" name="kode_buku" placeholder="Silahkan masukkan Kode Buku" maxlength="5" value="<?php echo $data['kd_buku']?>">
+                            <input class="form-control" type="text" name="kode_buku" placeholder="Silahkan masukkan Kode Buku" maxlength="5" value="<?php echo $data['kd_buku']?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
