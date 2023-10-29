@@ -1,5 +1,6 @@
 <?php
-    include "config/koneksi.php"
+    ob_start();
+    include "config/koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

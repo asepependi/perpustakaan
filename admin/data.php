@@ -7,5 +7,7 @@
         include "module/buku/aksi_tambah_data_buku.php";
     } elseif ($_GET['module']=="edit_data_buku") {
         include "module/buku/edit_data_buku.php";
+    } elseif ($_GET['module']=="aksi_edit_data_buku") {
+        include "module/buku/aksi_edit_data_buku.php";
     }
 ?>

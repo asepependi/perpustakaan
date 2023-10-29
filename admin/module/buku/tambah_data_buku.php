@@ -11,6 +11,13 @@
         <h5 class="page-title">Perpustakaan</h5>
     </div>
 </div>
+<?php ?>
+<!-- <div class="">
+    <div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+</div> -->
+<?php ?>
 <!-- end row -->
 <div class="row">
     <div class="col-12">
@@ -50,7 +57,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 text-right">
-                            <button class="btn btn-success btn-xs" type="submit">Tambah Buku</button>
+                            <button class="btn btn-success btn-xs" type="submit">Simpan Buku</button>
                         </div>
                     </div>
                 </form>
