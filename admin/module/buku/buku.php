@@ -62,7 +62,7 @@
                                         <td class="text-center">'.$data['stok'].'</td>
                                         <td class="text-center">
                                             <a href="?module=edit_data_buku&kd_buku='.$data['kd_buku'].'" class="btn btn-primary btn-xs">Edit</a>
-                                            <a href="?module=hapus_data_buku&kd_buku='.$data['kd_buku'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
+                                            <a href="?module=aksi_hapus_data_buku&kd_buku='.$data['kd_buku'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>
                                 ';
