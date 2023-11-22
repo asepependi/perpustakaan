@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 text-right">
-                            <button class="btn btn-success btn-xs" type="submit">Simpan Buku</button>
+                            <button class="btn btn-success btn-xs" type="submit">Simpan</button>
                         </div>
                     </div>
                 </form>
