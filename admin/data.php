@@ -1,4 +1,5 @@
 <?php
+    // Route Buku
     if ($_GET['module']== "buku") {
         include "module/buku/buku.php";
     } elseif ($_GET['module']=="tambah_data_buku") {
@@ -11,7 +12,9 @@
         include "module/buku/aksi_edit_data_buku.php";
     } elseif ($_GET['module']=="aksi_hapus_data_buku") {
         include "module/buku/aksi_hapus_data_buku.php";
-    } elseif ($_GET['module']=='staff') {
+    } 
+    // Route Staff
+    elseif ($_GET['module']=='staff') {
         include "module/staff/staff.php";
     } elseif ($_GET['module']=="tambah_data_staff") {
         include "module/staff/tambah_data_staff.php";
@@ -23,7 +26,9 @@
         include "module/staff/aksi_edit_data_staff.php";
     } elseif ($_GET['module']=="aksi_hapus_data_staff") {
         include "module/staff/aksi_hapus_data_staff.php";
-    } elseif ($_GET['module']=='anggota') {
+    } 
+    // Route Anggota
+    elseif ($_GET['module']=='anggota') {
         include "module/anggota/anggota.php";
     } elseif ($_GET['module']=="tambah_data_anggota") {
         include "module/anggota/tambah_data_anggota.php";
@@ -54,5 +59,27 @@
     }
     elseif ($_GET['module']=="aksi_hapus_data_peminjaman") {
         include "module/peminjaman/aksi_hapus_data_peminjaman.php";
+    }
+    elseif ($_GET['module']=="detail_peminjaman") {
+        include "module/peminjaman/detail_data_peminjaman.php";
+    }
+    // Route Pengembalian
+    elseif ($_GET['module']=='pengembalian') {
+        include "module/pengembalian/pengembalian.php";
+    } 
+    elseif ($_GET['module']=="tambah_data_pengembalian") {
+        include "module/pengembalian/tambah_data_pengembalian.php";
+    }
+    elseif ($_GET['module']=="aksi_tambah_data_pengembalian") {
+        include "module/pengembalian/aksi_tambah_data_pengembalian.php";
+    }
+    elseif ($_GET['module']=="edit_data_pengembalian") {
+        include "module/pengembalian/edit_data_pengembalian.php";
+    }
+    elseif ($_GET['module']=="aksi_edit_data_pengembalian") {
+        include "module/pengembalian/aksi_edit_data_pengembalian.php";
+    }
+    elseif ($_GET['module']=="aksi_hapus_data_pengembalian") {
+        include "module/pengembalian/aksi_hapus_data_pengembalian.php";
     }
 ?>
