@@ -63,6 +63,12 @@
     elseif ($_GET['module']=="detail_peminjaman") {
         include "module/peminjaman/detail_data_peminjaman.php";
     }
+    elseif ($_GET['module']=='tambah_peminjaman_buku') {
+        include "module/peminjaman/tambah_peminjaman_buku.php";
+    }
+    elseif ($_GET['module']=='aksi_tambah_data_peminjaman_buku') {
+        include "module/peminjaman/aksi_tambah_data_peminjaman_buku.php";
+    }
     // Route Pengembalian
     elseif ($_GET['module']=='pengembalian') {
         include "module/pengembalian/pengembalian.php";

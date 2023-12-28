@@ -66,12 +66,54 @@
                             <p><?php echo $data['waktu'] ?></p>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <div class="col-sm-12 text-right">
-                            <button class="btn btn-success btn-xs" type="submit">Simpan</button>
+                            <a href="?module=peminjaman" class="btn btn-secondary btn-xs">Kembali</a>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
+                <hr>
+                <a href="?module=tambah_peminjaman_buku&id=<?php echo $data['id_peminjaman'] ?>" class="btn btn-primary btn-xs">Tambah Buku Peminjam</a>
+                <br>
+                <br>
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No</th>
+                            <th>Kode Buku</th>
+                            <th>Judul Buku</th>
+                            <th>Penulis</th>
+                            <th>Penerbit</th>
+                            <th class="text-center">Stok</th>
+                            <th class="text-center">Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php 
+                            $i = 1;
+                            $sql = "select * from buku";
+                            $ress = mysqli_query($conn, $sql);
+                            while ($data = mysqli_fetch_array($ress)) {
+                                echo '
+                                    <tr>
+                                        <td class="text-center">'.$i.'</td>
+                                        <td class="text-center">'.$data['kd_buku'].'</td>
+                                        <td class="text-center">'.$data['judul_buku'].'</td>
+                                        <td class="text-center">'.$data['penulis'].'</td>
+                                        <td class="text-center">'.$data['penerbit'].'</td>
+                                        <td class="text-center">'.$data['stok'].'</td>
+                                        <td class="text-center">
+                                            <a href="?module=edit_data_buku&kd_buku='.$data['kd_buku'].'" class="btn btn-primary btn-xs">Edit</a>
+                                            <a href="?module=aksi_hapus_data_buku&kd_buku='.$data['kd_buku'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
+                                        </td>
+                                    </tr>
+                                ';
+                                $i++;
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div> <!-- end col -->
