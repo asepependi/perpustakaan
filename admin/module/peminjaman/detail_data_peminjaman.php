@@ -4,7 +4,7 @@
         <div class="float-right page-breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Data</a></li>
-                <li class="breadcrumb-item"><a href="?module=buku">Data Detail Peminjaman</a></li>
+                <li class="breadcrumb-item"><a href="?module=peminjaman">Data Peminjaman</a></li>
                 <li class="breadcrumb-item active"> Detail Data Peminjaman</li>
             </ol>
         </div>
@@ -92,7 +92,11 @@
                     <tbody>
                         <?php 
                             $i = 1;
-                            $sql = "select * from buku";
+                            $id_peminjaman = $_GET['id'];
+                            $sql = "select buku.id, buku.kd_buku, buku.judul_buku, buku.penulis, buku.penerbit, buku.stok
+                                    from detail_peminjaman 
+                                    inner join buku on buku.id = detail_peminjaman.id_buku
+                                    where id_peminjaman='$id_peminjaman'";
                             $ress = mysqli_query($conn, $sql);
                             while ($data = mysqli_fetch_array($ress)) {
                                 echo '
@@ -104,8 +108,8 @@
                                         <td class="text-center">'.$data['penerbit'].'</td>
                                         <td class="text-center">'.$data['stok'].'</td>
                                         <td class="text-center">
-                                            <a href="?module=edit_data_buku&kd_buku='.$data['kd_buku'].'" class="btn btn-primary btn-xs">Edit</a>
-                                            <a href="?module=aksi_hapus_data_buku&kd_buku='.$data['kd_buku'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
+                                            <a href="?module=edit_peminjaman_buku&buku='.$data['id'].'&peminjaman='.$id_peminjaman.'" class="btn btn-primary btn-xs">Edit</a>
+                                            <a href="?module=aksi_hapus_peminjaman_buku&buku='.$data['id'].'&peminjaman='.$id_peminjaman.'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>
                                 ';

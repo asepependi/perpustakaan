@@ -9,7 +9,7 @@
     $buku = $_POST['buku'];
 
     {
-        $sql = "INSERT INTO detail_peminjaman SET id_peminjaman='$idPeminjaman', id_buku='$buku'";
+        $sql = "UPDATE detail_peminjaman SET WHERE id_peminjaman='$idPeminjaman', id_buku='$buku'";
         if (mysqli_query($conn, $sql)) {
             $_SESSION['message'] = "Peminjaman Buku berhasil disimpan !";
             header('Location: ?module=detail_peminjaman&id='.$idPeminjaman.'');

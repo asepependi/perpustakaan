@@ -69,6 +69,12 @@
     elseif ($_GET['module']=='aksi_tambah_data_peminjaman_buku') {
         include "module/peminjaman/aksi_tambah_data_peminjaman_buku.php";
     }
+    elseif ($_GET['module']=='edit_peminjaman_buku') {
+        include "module/peminjaman/edit_peminjaman_buku.php";
+    }
+    elseif ($_GET['module']=='aksi_edit_data_peminjaman_buku') {
+        include "module/peminjaman/aksi_edit_data_peminjaman_buku.php";
+    }
     // Route Pengembalian
     elseif ($_GET['module']=='pengembalian') {
         include "module/pengembalian/pengembalian.php";
