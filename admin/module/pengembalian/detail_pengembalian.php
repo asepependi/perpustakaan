@@ -92,11 +92,11 @@
                     <tbody>
                         <?php 
                             $i = 1;
-                            $id_peminjaman = $_GET['id'];
-                            $sql = "select detail_peminjaman.id_detail_peminjaman, buku.kd_buku, buku.judul_buku, buku.penulis, buku.penerbit, buku.stok
-                                    from detail_peminjaman 
-                                    inner join buku on buku.id = detail_peminjaman.id_buku
-                                    where id_peminjaman='$id_peminjaman'";
+                            $idPengembalian = $_GET['id'];
+                            $sql = "select detail_pengembalian.id_detail_pengembalian, buku.id as idBuku, buku.kd_buku, buku.judul_buku, buku.penulis, buku.penerbit, buku.stok
+                                    from detail_pengembalian 
+                                    inner join buku on buku.id = detail_pengembalian.id_buku
+                                    where id_pengembalian='$idPengembalian'";
                             $ress = mysqli_query($conn, $sql);
                             while ($data = mysqli_fetch_array($ress)) {
                                 echo '
@@ -108,8 +108,8 @@
                                         <td class="text-center">'.$data['penerbit'].'</td>
                                         <td class="text-center">'.$data['stok'].'</td>
                                         <td class="text-center">
-                                            <a href="?module=edit_peminjaman_buku&detail='.$data['id_detail_peminjaman'].'" class="btn btn-primary btn-xs">Edit</a>
-                                            <a href="?module=aksi_hapus_peminjaman_buku&detail='.$data['id_detail_peminjaman'].'&pinjam='.$id_peminjaman.'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
+                                            <a href="?module=edit_pengembalian_buku&detail='.$data['id_detail_pengembalian'].'&buku='.$data['idBuku'].'" class="btn btn-primary btn-xs">Edit</a>
+                                            <a href="?module=aksi_hapus_pengembalian_buku&detail='.$data['id_detail_pengembalian'].'&pengembalian='.$idPengembalian.'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>
                                 ';
@@ -125,6 +125,6 @@
 <?php ?>
 <script type="text/javascript">
     function deleteData() {
-        return confirm('Apakah anda yakin ingin menghapus Buku Pinjaman ini ?')
+        return confirm('Apakah anda yakin ingin menghapus Buku Pengembalian ini ?')
     }
 </script>

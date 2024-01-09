@@ -1,6 +1,14 @@
 <?php
+    // Dashboard
+    if($_GET['module']== "dashboard") {
+        include "module/dashboard.php";
+    }
+    // Profile
+    elseif ($_GET['module']== "profile") {
+        include "module/profile.php";
+    }
     // Route Buku
-    if ($_GET['module']== "buku") {
+    elseif ($_GET['module']== "buku") {
         include "module/buku/buku.php";
     } elseif ($_GET['module']=="tambah_data_buku") {
         include "module/buku/tambah_data_buku.php";
@@ -105,5 +113,14 @@
     }
     elseif ($_GET['module']=='aksi_tambah_data_pengembalian_buku') {
         include "module/pengembalian/aksi_tambah_data_pengembalian_buku.php";
+    }
+    elseif ($_GET['module']=='edit_pengembalian_buku') {
+        include "module/pengembalian/edit_pengembalian_buku.php";
+    }
+    elseif ($_GET['module']=='aksi_edit_pengembalian_buku') {
+        include "module/pengembalian/aksi_edit_pengembalian_buku.php";
+    }
+    elseif ($_GET['module']=="aksi_hapus_pengembalian_buku") {
+        include "module/pengembalian/aksi_hapus_pengembalian_buku.php";
     }
 ?>

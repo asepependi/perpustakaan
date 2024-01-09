@@ -60,7 +60,7 @@
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="?module=dashboard" class="waves-effect">
                                     <i class="dripicons-meter"></i>
                                     <span> Dashboard</span>
                                 </a>
@@ -112,9 +112,7 @@
                                         <img src="../assets/images/users/user-1.jpg" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
-                                        <a class="dropdown-item" href="#"><span class="badge badge-success mt-1 float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
+                                        <a class="dropdown-item" href="?module=profile"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>
                                 </li>

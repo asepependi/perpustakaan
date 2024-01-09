@@ -58,7 +58,7 @@ CREATE TABLE `buku` (
   `stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `buku_kd_buku_IDX` (`kd_buku`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `detail_peminjaman` (
   KEY `fk_idpeminjaman_dp` (`id_peminjaman`),
   CONSTRAINT `fk_buku_dp` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_idpeminjaman_dp` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `detail_peminjaman` (
 
 LOCK TABLES `detail_peminjaman` WRITE;
 /*!40000 ALTER TABLE `detail_peminjaman` DISABLE KEYS */;
-INSERT INTO `detail_peminjaman` VALUES (1,3,4),(2,3,3),(3,1,3),(4,1,2);
+INSERT INTO `detail_peminjaman` VALUES (1,3,4),(2,3,3),(3,1,3),(4,1,2),(5,1,3);
 /*!40000 ALTER TABLE `detail_peminjaman` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,11 +108,15 @@ DROP TABLE IF EXISTS `detail_pengembalian`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detail_pengembalian` (
-  `id_detail_pengembalian` int(5) NOT NULL,
+  `id_detail_pengembalian` int(5) NOT NULL AUTO_INCREMENT,
   `id_pengembalian` int(5) NOT NULL,
   `id_buku` int(5) NOT NULL,
-  PRIMARY KEY (`id_detail_pengembalian`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id_detail_pengembalian`),
+  KEY `fk_buku_dpmbln` (`id_buku`),
+  KEY `fk_idpengembalian_dp` (`id_pengembalian`),
+  CONSTRAINT `fk_buku_dpmbln` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_idpengembalian_dp` FOREIGN KEY (`id_pengembalian`) REFERENCES `pengembalian` (`id_pengembalian`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +169,7 @@ CREATE TABLE `pengembalian` (
   `tanggal` date NOT NULL,
   `waktu` time NOT NULL,
   PRIMARY KEY (`id_pengembalian`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-09 21:16:02
+-- Dump completed on 2024-01-10  3:45:24
