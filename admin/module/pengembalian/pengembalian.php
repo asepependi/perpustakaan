@@ -62,8 +62,9 @@
                                         <td class="text-center">'.date('j F Y', strtotime($data['tanggal'])).'</td>
                                         <td class="text-center">'.$data['waktu'].'</td>
                                         <td class="text-center">
-                                            <a href="?module=edit_data_peminjaman&id='.$data['id_pengembalian'].'" class="btn btn-primary btn-xs">Edit</a>
-                                            <a href="?module=aksi_hapus_data_peminjaman&id='.$data['id_pengembalian'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
+                                            <a href="?module=edit_data_pengembalian&id='.$data['id_pengembalian'].'" class="btn btn-primary btn-xs">Edit</a>
+                                            <a href="?module=detail_pengembalian&id='.$data['id_pengembalian'].'" class="btn btn-secondary btn-xs">Detail Pengembalian</a>
+                                            <a href="?module=aksi_hapus_data_pengembalian&id='.$data['id_pengembalian'].'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>
                                 ';

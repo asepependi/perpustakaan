@@ -4,8 +4,8 @@
         <div class="float-right page-breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Data</a></li>
-                <li class="breadcrumb-item"><a href="?module=peminjaman">Data Peminjaman</a></li>
-                <li class="breadcrumb-item active"> Detail Data Peminjaman</li>
+                <li class="breadcrumb-item"><a href="?module=pengembalian">Data Pengembalian</a></li>
+                <li class="breadcrumb-item active"> Detail Data Pengembalian</li>
             </ol>
         </div>
         <h5 class="page-title">Perpustakaan</h5>
@@ -31,17 +31,17 @@
     <div class="col-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">Detail Data Peminjaman</h4>
+                <h4 class="mt-0 header-title">Detail Data Pengembalian</h4>
                 <?php
                     $id = $_GET['id'];
-                    $sql = "select id_peminjaman,nama_anggota, nama_staff, tanggal, waktu, anggota_perpus.id_anggota
-                            from peminjaman
-                            inner join anggota_perpus on anggota_perpus.id_anggota = peminjaman.id_anggota 
-                            inner join staff_perpus on staff_perpus.id_staff = peminjaman.id_staff where id_peminjaman='$id'";
+                    $sql = "select id_pengembalian,nama_anggota, nama_staff, tanggal, waktu, anggota_perpus.id_anggota
+                            from pengembalian
+                            inner join anggota_perpus on anggota_perpus.id_anggota = pengembalian.id_anggota 
+                            inner join staff_perpus on staff_perpus.id_staff = pengembalian.id_staff where id_pengembalian='$id'";
                     $ress = mysqli_query($conn, $sql);
                     $data = mysqli_fetch_array($ress);
                 ?>
-                <form action="?module=aksi_tambah_data_buku" method="post">
+                <form action="?module=aksi_tambah_data_buku_pengembalian" method="post">
                     <div class="form-group row">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Id Anggota</label>
                         <div class="col-sm-10">
@@ -73,7 +73,7 @@
                     </div> -->
                 </form>
                 <hr>
-                <a href="?module=tambah_peminjaman_buku&id=<?php echo $data['id_peminjaman'] ?>" class="btn btn-primary btn-xs">Tambah Buku Peminjam</a>
+                <a href="?module=tambah_pengembalian_buku&id=<?php echo $data['id_pengembalian'] ?>" class="btn btn-primary btn-xs">Tambah Buku Pengembalian</a>
                 <br>
                 <br>
                 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

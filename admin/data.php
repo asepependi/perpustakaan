@@ -75,6 +75,9 @@
     elseif ($_GET['module']=='aksi_edit_data_peminjaman_buku') {
         include "module/peminjaman/aksi_edit_data_peminjaman_buku.php";
     }
+    elseif ($_GET['module']=="aksi_hapus_peminjaman_buku") {
+        include "module/peminjaman/aksi_hapus_peminjaman_buku.php";
+    }
     // Route Pengembalian
     elseif ($_GET['module']=='pengembalian') {
         include "module/pengembalian/pengembalian.php";
@@ -93,5 +96,14 @@
     }
     elseif ($_GET['module']=="aksi_hapus_data_pengembalian") {
         include "module/pengembalian/aksi_hapus_data_pengembalian.php";
+    }
+    elseif ($_GET['module']=="detail_pengembalian") {
+        include "module/pengembalian/detail_pengembalian.php";
+    }
+    elseif ($_GET['module']=='tambah_pengembalian_buku') {
+        include "module/pengembalian/tambah_pengembalian_buku.php";
+    }
+    elseif ($_GET['module']=='aksi_tambah_data_pengembalian_buku') {
+        include "module/pengembalian/aksi_tambah_data_pengembalian_buku.php";
     }
 ?>
