@@ -19,7 +19,7 @@
             } elseif ($buku == '') {
                 $_SESSION['message'] = "Buku tidak boleh kosong !";
             }
-            header('Location: ?module=tambah_peminjaman_buku&id='.$idPeminjaman.'');
+            header('Location: ?module=edit_peminjaman_buku&id='.$idPeminjaman.'');
         }
         mysqli_close($conn);
     }
