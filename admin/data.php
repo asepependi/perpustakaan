@@ -7,6 +7,13 @@
     elseif ($_GET['module']== "profile") {
         include "module/profile.php";
     }
+    // Laporan
+    elseif ($_GET['module']== 'laporan_peminjaman') {
+        include "module/laporan/laporan_peminjaman.php";
+    }
+    elseif ($_GET['module']== 'laporan_peminjaman_buku') {
+        include "module/laporan/laporan_peminjaman_buku.php";
+    }
     // Route Buku
     elseif ($_GET['module']== "buku") {
         include "module/buku/buku.php";

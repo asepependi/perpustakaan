@@ -76,9 +76,11 @@
                                     <li><a href="?module=pengembalian">Data Pengembalian Buku</a></li>
                                 </ul>
                             </li>
-
-                            <li>
-                                <a href="?module=laporan" class="waves-effect"><i class="dripicons-calendar"></i><span> Laporan </span></a>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-calendar"></i> <span> Laporan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="?module=laporan_peminjaman">Peminjaman Buku</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
