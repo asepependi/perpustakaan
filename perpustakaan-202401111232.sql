@@ -38,7 +38,7 @@ CREATE TABLE `anggota_perpus` (
 
 LOCK TABLES `anggota_perpus` WRITE;
 /*!40000 ALTER TABLE `anggota_perpus` DISABLE KEYS */;
-INSERT INTO `anggota_perpus` VALUES ('001','Testing','asepependi','124','laki-laki','asda'),('002','Anggota 2','anggota2','121212','perempuan','');
+INSERT INTO `anggota_perpus` VALUES ('001','ASEP EPENDI','asepependi','124','laki-laki','asda');
 /*!40000 ALTER TABLE `anggota_perpus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `buku` (
   `stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `buku_kd_buku_IDX` (`kd_buku`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `detail_peminjaman` (
   KEY `fk_idpeminjaman_dp` (`id_peminjaman`),
   CONSTRAINT `fk_buku_dp` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_idpeminjaman_dp` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `detail_peminjaman` (
 
 LOCK TABLES `detail_peminjaman` WRITE;
 /*!40000 ALTER TABLE `detail_peminjaman` DISABLE KEYS */;
-INSERT INTO `detail_peminjaman` VALUES (1,3,4),(2,3,3),(3,1,3),(4,1,2),(5,1,3);
+INSERT INTO `detail_peminjaman` VALUES (6,4,2);
 /*!40000 ALTER TABLE `detail_peminjaman` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +142,7 @@ CREATE TABLE `peminjaman` (
   `tanggal` date NOT NULL,
   `waktu` time NOT NULL,
   PRIMARY KEY (`id_peminjaman`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +151,7 @@ CREATE TABLE `peminjaman` (
 
 LOCK TABLES `peminjaman` WRITE;
 /*!40000 ALTER TABLE `peminjaman` DISABLE KEYS */;
-INSERT INTO `peminjaman` VALUES (1,2,1,'2023-11-11','20:00:00'),(3,3,3,'2023-11-01','22:21:00');
+INSERT INTO `peminjaman` VALUES (4,1,1,'2024-01-01','13:01:00');
 /*!40000 ALTER TABLE `peminjaman` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +204,7 @@ CREATE TABLE `staff_perpus` (
 
 LOCK TABLES `staff_perpus` WRITE;
 /*!40000 ALTER TABLE `staff_perpus` DISABLE KEYS */;
-INSERT INTO `staff_perpus` VALUES ('001','ASEP EPENDI','asepependi','12345','laki-laki','ada'),('002','Testings','penghuni','1234a','laki-laki','asda'),('003','Staff 3','staff3','121212','laki-laki','');
+INSERT INTO `staff_perpus` VALUES ('001','ASEP EPENDI','asepependi','12345','laki-laki','ada');
 /*!40000 ALTER TABLE `staff_perpus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-10  3:45:24
+-- Dump completed on 2024-01-11 12:32:10
