@@ -66,11 +66,6 @@
                             <p><?php echo $data['waktu'] ?></p>
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <div class="col-sm-12 text-right">
-                            <a href="?module=peminjaman" class="btn btn-secondary btn-xs">Kembali</a>
-                        </div>
-                    </div> -->
                 </form>
                 <hr>
                 <a href="?module=tambah_peminjaman_buku&id=<?php echo $data['id_peminjaman'] ?>" class="btn btn-primary btn-xs">Tambah Buku Peminjam</a>
@@ -84,7 +79,6 @@
                             <th>Judul Buku</th>
                             <th>Penulis</th>
                             <th>Penerbit</th>
-                            <th class="text-center">Stok</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -93,7 +87,7 @@
                         <?php 
                             $i = 1;
                             $id_peminjaman = $_GET['id'];
-                            $sql = "select detail_peminjaman.id_detail_peminjaman, buku.kd_buku, buku.judul_buku, buku.penulis, buku.penerbit, buku.stok
+                            $sql = "select detail_peminjaman.id_detail_peminjaman,buku.id as idBuku, buku.kd_buku, buku.judul_buku, buku.penulis, buku.penerbit, buku.stok
                                     from detail_peminjaman 
                                     inner join buku on buku.id = detail_peminjaman.id_buku
                                     where id_peminjaman='$id_peminjaman'";
@@ -106,9 +100,8 @@
                                         <td class="text-center">'.$data['judul_buku'].'</td>
                                         <td class="text-center">'.$data['penulis'].'</td>
                                         <td class="text-center">'.$data['penerbit'].'</td>
-                                        <td class="text-center">'.$data['stok'].'</td>
                                         <td class="text-center">
-                                            <a href="?module=edit_peminjaman_buku&detail='.$data['id_detail_peminjaman'].'" class="btn btn-primary btn-xs">Edit</a>
+                                            <a href="?module=edit_peminjaman_buku&detail='.$data['id_detail_peminjaman'].'&buku='.$data['idBuku'].'" class="btn btn-primary btn-xs">Edit</a>
                                             <a href="?module=aksi_hapus_peminjaman_buku&detail='.$data['id_detail_peminjaman'].'&pinjam='.$id_peminjaman.'" onclick="return deleteData()" class="btn btn-danger btn-xs delete-item">Hapus</a>
                                         </td>
                                     </tr>

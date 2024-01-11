@@ -9,11 +9,11 @@
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -35,7 +35,7 @@
                                     <div class="card-body">
                 
                                         <h3 class="text-center mt-0 m-b-15">
-                                            <a href="index.html" class="logo logo-admin"><img src="../assets/images/logo-dark.png" height="30" alt="logo"></a>
+                                            <a href="index.html" class="logo logo-admin"><img src="assets/images/logo-dark.png" height="30" alt="logo"></a>
                                         </h3>
                 
                                         <h4 class="text-muted text-center font-18"><b>Sign In</b></h4>
@@ -92,19 +92,19 @@
         </div>
 
         <!-- jQuery  -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/js/modernizr.min.js"></script>
-        <script src="../assets/js/detect.js"></script>
-        <script src="../assets/js/fastclick.js"></script>
-        <script src="../assets/js/jquery.slimscroll.js"></script>
-        <script src="../assets/js/jquery.blockUI.js"></script>
-        <script src="../assets/js/waves.js"></script>
-        <script src="../assets/js/jquery.nicescroll.js"></script>
-        <script src="../assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/modernizr.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
 
         <!-- App js -->
-        <script src="../assets/js/app.js"></script>
+        <script src="assets/js/app.js"></script>
 
     </body>
 </html>

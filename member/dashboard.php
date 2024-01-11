@@ -10,5 +10,5 @@
         <h5 class="page-title">Dashboard</h5>
     </div>
 </div>
-<h1>Selamat Datang</h1>
+<h1>Selamat Datang, Anggota Perpustakaan</h1>
 <?php ?>

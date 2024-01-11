@@ -9,7 +9,7 @@
     }
 
     // Data Peminjaman
-    $id = $_GET['peminjaman'];
+    $id = $_GET['detail'];
     $bukuId = $_GET['buku'];
     $sql = "select * from detail_peminjaman where id_detail_peminjaman='$id' and id_buku='$bukuId'";
     $ress = mysqli_query($conn, $sql);
@@ -21,7 +21,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Data</a></li>
                 <li class="breadcrumb-item"><a href="?module=peminjaman">Data Peminjaman Buku</a></li>
-                <li class="breadcrumb-item"><a href="?module=detail_peminjaman&id=<?php echo $id ?>">Detail Data Peminjaman</a></li>
+                <li class="breadcrumb-item"><a href="?module=detail_peminjaman&id=<?php echo $data['id_peminjaman'] ?>">Detail Data Peminjaman</a></li>
                 <li class="breadcrumb-item active">Edit Data Peminjaman Buku</li>
             </ol>
         </div>
@@ -50,7 +50,8 @@
             <div class="card-body">
                 <h4 class="mt-0 header-title">Form Tambah Data Peminjaman Buku</h4>
                 <form action="?module=aksi_edit_data_peminjaman_buku" method="post">
-                    <input type="hidden" name="id_peminjaman" value="<?php echo $id ?>">
+                    <input type="hidden" name="id_detail" value="<?php echo $id ?>">
+                    <input type="hidden" name="id_peminjaman" value="<?php echo $data['id_peminjaman'] ?>">
                     <div class="form-group row">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Kode Buku</label>
                         <div class="col-sm-10">

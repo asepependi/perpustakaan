@@ -1,11 +1,7 @@
 <?php
     // Dashboard
     if($_GET['module']== "dashboard") {
-        include "module/dashboard.php";
-    }
-    // Profile
-    elseif ($_GET['module']== "profile") {
-        include "module/profile.php";
+        include "dashboard.php";
     }
     // Laporan
     elseif ($_GET['module']== 'laporan_peminjaman') {
@@ -13,6 +9,9 @@
     }
     elseif ($_GET['module']== 'laporan_peminjaman_buku') {
         include "module/laporan/laporan_peminjaman_buku.php";
+    }
+    elseif ($_GET['module']== 'detail_laporan_peminjaman') {
+        include "module/laporan/detail_laporan_peminjaman.php";
     }
     // Route Buku
     elseif ($_GET['module']== "buku") {

@@ -4,7 +4,7 @@
     include "../config/koneksi.php";
     error_reporting(0);
     require_once('timeout.php');
-    $id = ($_SESSION['kd_staff'] != null) ? $_SESSION['kd_staff']:null;
+    $id = ($_SESSION['kd_anggota'] != null) ? $_SESSION['kd_anggota']:null;
     if ($id) {
 ?>
 <!DOCTYPE html>
@@ -73,16 +73,6 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Data </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="?module=buku">Data Buku Perpus</a></li>
-                                    <li><a href="?module=staff">Data Staff Perpus</a></li>
-                                    <li><a href="?module=anggota">Data Anggota Perpus</a></li>
-                                    <li><a href="?module=peminjaman">Data Peminjaman Buku</a></li>
-                                    <li><a href="?module=pengembalian">Data Pengembalian Buku</a></li>
-                                </ul>
-                            </li>
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-calendar"></i> <span> Laporan </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="?module=laporan_peminjaman">Peminjaman Buku</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -113,10 +103,11 @@
                             <ul class="list-inline float-right mb-0">
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="false" aria-expanded="false">
+                                       aria-haspopup="false" aria-expanded="false">
                                         <img src="../assets/images/users/user-1.jpg" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
+                                        <a class="dropdown-item" href="?module=profile"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="../logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>
                                 </li>
